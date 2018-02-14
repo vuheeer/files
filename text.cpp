@@ -13,7 +13,7 @@ int main( )
 	if (out) {
 		out << a << endl;
 		out << b << endl;
-		out << c << endl;
+		out << c;
 	}
 	else {
 		cout << "Could not write";
