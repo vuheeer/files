@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 int main( )
@@ -8,9 +9,14 @@ int main( )
    float b = 68.123; 
    char c = 'J';
  
-   cout<<a<<" "<<b<<" "<<c;//display data to console (i.e. as formatted chars)
-
-   cout<<endl<<endl;
- 
-   return 0;
+   	ofstream out{"abc.bin"};
+	if (out) {
+		out.write(reinterpret_cast<char*>(&a),sizeof(a));
+		out.write(reinterpret_cast<char*>(&b),sizeof(b));
+		out.write(reinterpret_cast<char*>(&c),sizeof(c));
+	}
+	else {
+		cout << "Error writing to file";
+	}
+     return 0;
 }
