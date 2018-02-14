@@ -12,7 +12,7 @@ int main( )
 	ofstream out{"abc.txt"};
 	if (out) {
 		out << a << endl;
-		out << b << endl;
+		out << b << " ";
 		out << c;
 	}
 	else {
